@@ -1,0 +1,87 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Craps Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    </head>
+    <body>
+        
+        <div id="crapsTableWrapper">
+            <div id="externalcl">
+
+            <div id="externalCLTOPBAR">Game log</div>
+            <div id="external-comment"><ul id="ulCOMMENT"></ul></div>
+        
+            </div>
+        <div id="crapsTable">
+            <div id='passLine'><img id="passlineImg"src="" alt=""><span class="passLineBet"></span></div>
+            <div id='passLineUp'></div>
+            <p><h1 class="chipCount"></h1></p>
+            <div class="chips">
+                <p id="chips10">10</p>
+                <p id="chips25">25</p>
+                <p id="chips50">50</p>
+                <p id="chips100">100</p>
+
+
+            </div>
+           
+            <p id="comeBar"><img id="comeBarImg"src="" alt=""></p>
+            <p class="field"><img id="fieldImg"src="" alt=""><span class="fieldBet"></span></p>
+            <p id="donePassLowerBar">dont pass bar</p>
+            <p id="donePassVerticalBar">dont pass bar</p>
+
+
+            <button id='clearBets'>Clear bets</button>
+            <div class="dice">
+                <div class="leftDice"><h1 class="leftDiceNum">4</h1></div>
+                <div class="rightDice"><h1 class="rightDiceNum">4</h1></div>
+            </div>
+
+        
+
+            <div id="points">
+                <span class="dontComeBar">DCB</span>
+                <span class="four"><span class="fourPoint">.</span><span class="comeBetFour">.</span></span>
+                <span class="five"><span class="fivePoint">.</span><span class="comeBetFive">.</span></span>
+                <span class="six"><span class="sixPoint">.</span><span class="comeBetSix">.</span></span>
+                <span class="eight"><span class="eightPoint">.</span><span class="comeBetEight">.</span></span>
+                <span class="nine"><span class="ninePoint">.</span><span class="comeBetNine">.</span></span>
+                <span class="ten"><span class="tenPoint">.</span><span class="comeBetTen">.</span></span>
+
+            </div>
+
+            
+
+            
+
+
+        </div>
+        <div id="playerWinnings">Player Winnings <h1 class="playerCount">0</h1></div>
+        <div id="stats"><div id="statsHeader"><h1><u>Stats and information</u></h1></div>
+        
+
+        
+        <span class="functionsRun">Results from 1000 functions</span>
+        <span class="wins">Times won : 0 </span>
+        <span class="losses">Times lost : 0 </span>
+        <div id="myChart" style="max-width:700px; height:400px"></div>
+        <div id="myChartTwo" style="max-width:700px; height:400px"></div>
+
+         
+       
+       
+        <script
+        src="https://www.gstatic.com/charts/loader.js">
+        </script>
+        <script src="./Script.js" async defer> 
+        
+        </script>
+    </body>
+</html>
