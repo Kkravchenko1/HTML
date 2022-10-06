@@ -70,11 +70,8 @@ margin: 0;
    
     width: 420px;
     height: 37px;
-    
     grid-column: 2 / 4;
     grid-row: 6 / 7 ;
-   
-    
 }
 
 #passLine:hover{
