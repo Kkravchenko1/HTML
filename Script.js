@@ -435,15 +435,59 @@ var passbet = 0
 
 var passLineBetAmount = document.querySelector('.passLineBet')
 
-function betAmount(){
-	// add bet amount based on how much is being bet
-	// if won - add to winnings based on amount won
 
-	
 
+
+// ************ DONT PASS BAR BELOW **************
+
+
+
+var dontPassBar = document.getElementById('dontPassLowerBar')
+var dontPassBarUp = document.getElementById('dontPassVerticalBar')
+var dontPassBarImg = document.getElementById('dontPassBarImg')
+
+dontPassVerticalBar.addEventListener('click', dontPass)
+dontPassBar.addEventListener('click', dontPass)
+
+var dontPassBool = false
+
+// onclick function
+
+
+function dontPass(){
+
+	dontPassBool = true
+	dontPassBarImg.src = flag
 
 }
 
+function dontPassGame(){
+
+	if(dontPassBool === true && game === false){
+		if([7, 11].includes(combinedScore)){
+		declared = 'You lose on the dont come bar'
+		testCommentAdd()
+		dontPassBool = false
+
+		} else if([2,3,12].includes(combinedScore)){
+			declared = 'You win on the dont come bar'
+			testCommentAdd()
+			
+			} 
+		}
+		if(dontPassBool === true && game === true){
+			if(winningScore === combinedScore){
+				declared = 'Dont come bar loss'
+				testCommentAdd()
+				dontPassBool = false
+			} else if(combinedScore === 7){
+				declared = 'Dont come bar win'
+				testCommentAdd()
+			}
+		}
+	}
+
+// ************ DONT PASS BAR ABOVE **************
 
 
 function updatePlayerCount(){
@@ -501,6 +545,7 @@ function updateDice(){
     comeBetSelector()
     comeBetWinner()
     fieldBetWinner()
+	dontPassGame()
     
 
 

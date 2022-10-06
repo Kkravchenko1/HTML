@@ -3,12 +3,30 @@ padding: 0;
 margin: 0;
 }
 
+
+#sixBigEight{
+    grid-column: 2/4;
+    grid-row: 4/6;
+  
+    transform: rotate(45deg);   
+    height: 65px;
+    position: relative;
+    top: 25px;
+    width: 90px;
+    border-radius: 20px;
+}
+
+#sixBigEight:hover{
+    cursor: pointer;
+}
+
 #externalcl {
     grid-column: 2/3;
     grid-row: 2/3;
     border: 1px black solid;
     width: 300px;
     overflow: scroll;
+
 }
 
 #externalCLTOPBAR {
@@ -57,13 +75,6 @@ margin: 0;
     padding-top: 50px;
 }
 
-#test {
-    width: 105px;
-    height: 55px;
-    background-color: red;
-    text-align: center;
-   
-}
 
 
 #passLine {
@@ -90,17 +101,38 @@ margin: 0;
     cursor: pointer;
 }
 
-#donePassLowerBar{
-    grid-column: 3/4;
+#dontPassLowerBar{
+    grid-column: 3/5;
     grid-row: 5/6;
-    text-align: center;
+    
+    margin-left: 60px;
+    
 }
+
+#dontPassLowerBar:hover {
+    cursor: pointer;
+}
+
+#dontPassVerticalBar{
+    grid-column: 2/3;
+    grid-row: 2/4;
+ 
+}
+
+#dontPassVerticalBar:hover {
+    cursor: pointer;
+}
+
+
+
+
+
 
 #donePassVerticalBar{
     grid-column: 2/3;
     grid-row: 2/4;
     height: 150px;
-    border: black solid 1px;
+    
 }
 
 #playerWinnings {
@@ -125,8 +157,8 @@ margin: 0;
     grid-row-start: 2;
     grid-row-end: 3;
     display: grid;
-    grid-template-columns: 40px 40px 375px 65px 1fr 75px 75px 25px 25px;
-    grid-template-rows: 15px 115px 60px 65px 35px 40px 45px 25px 20px;
+    grid-template-columns: 40px 40px 60px 315px 65px 35px 75px 75px 25px 25px;
+    grid-template-rows: 25px 100px 60px 63px 40px 40px 48px 25px ;
     min-width: 100%;
     max-width: 100%;
     
@@ -143,7 +175,7 @@ margin: 0;
 
 .chips {
     grid-row: 7/8;
-    grid-column: 3/4;
+    grid-column: 3/5;
    
     width: fill;
     height: 50px;
@@ -175,8 +207,8 @@ margin: 0;
 .dice {
     height: 60px;
     width: 130px;
-    background-color: red;
-    align-items: right;
+    
+  
     display: flex;
     flex-direction: row;
     grid-column: 6/8;
@@ -192,6 +224,7 @@ margin: 0;
     flex: 1;
     border: 1px solid black;
     text-align: center;
+    background-color: red;
 }
 
 
@@ -205,6 +238,7 @@ margin: 0;
     margin-left: 10px;
     align-items: center;
     text-align: center;
+    background-color: red;
 }
 
 .rightDice:hover{
@@ -221,19 +255,33 @@ margin: 0;
     grid-column: 3/5;
     grid-row: 2/3;
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 59px 58px 59px 59px 59px 59px 59px;
     grid-row: 1fr;
-    height: 115px;
+    height: 100px;
+    grid-gap:4px
   
 }
 
-
+.comeBetFour, .comeBetFive, .comeBetSix, .comeBetEight, .comeBetNine, .comeBetTen  {
+    grid-row: 2/3;
+    
+    font-size: 10px;
+    
+}
 
 .four, .five, .six, .eight, .nine, .ten {
     display: grid;
-    grid-template-rows: 15px 1fr
+    grid-template-rows: 20px 12px 60px;
 }
 
+#fourPoint{
+    grid-row: 1/2;
+  
+}
+
+#placeBetFour, #placeBetfive, #placeBetSix, #placeBetEight, #placeBetNine, #placeBetTen{
+    grid-row: 3/4;
+}
 
 
 #comeBar {
@@ -250,7 +298,7 @@ margin: 0;
 }
 
 .field {
-    grid-column: 3/4;
+    grid-column: 3/5;
     grid-row: 4/5;
     text-align: center;
 }
