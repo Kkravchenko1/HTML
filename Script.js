@@ -1,8 +1,8 @@
 
 
-// Definitions
 
-let dontComeBar = document.querySelector('.dontComeBar')
+
+
 let four = document.querySelector('.four') // pays 2 to 1
 let five = document.querySelector('.five') // pays 3 to 2
 let six = document.querySelector('.six') // pays 5:6
@@ -438,7 +438,7 @@ var passLineBetAmount = document.querySelector('.passLineBet')
 
 
 
-// ************ DONT PASS BAR BELOW **************
+// ************ DONT PASS BAR **************
 
 
 
@@ -488,6 +488,247 @@ function dontPassGame(){
 	}
 
 // ************ DONT PASS BAR ABOVE **************
+
+
+
+// ************ DONT COME BAR **************
+
+let dontComeBar = document.querySelector('.dontComeBar')
+
+var dontComeBarImg = document.getElementById('dontComeBarImg')
+
+dontComeBar.addEventListener('click', imageDontCome)
+
+function imageDontCome(){
+	dontComeBarImg.src = flag
+}
+
+
+
+// ************ DONT COME BAR ^^ **************
+
+// ************ 6 Big 8 **************
+
+var sixBigEight = document.getElementById('sixBigEight')
+
+var sixBigEightImg = document.getElementById('sixBigEightImg')
+
+
+sixBigEight.addEventListener('click', sixBigEightImgF)
+
+function sixBigEightImgF(){
+	sixBigEightImg.src = flag
+}
+
+
+// ************ 6 Big 8 ^^ **************
+
+
+
+// ************** PLACE BETS **************
+
+let placeFour = document.getElementById('placeBetFour')
+let placeFive = document.getElementById('placeBetFive')
+let placeSix = document.getElementById('placeBetSix')
+let placeEight = document.getElementById('placeBetEight')
+let placeNine = document.getElementById('placeBetNine')
+let placeTen = document.getElementById('placeBetTen')
+
+let placeFourImg = document.getElementById('placeBetFourImg')
+let placeFiveImg = document.getElementById('placeBetFiveImg')
+let placeSixImg = document.getElementById('placeBetSixImg')
+let placeEightImg = document.getElementById('placeBetEightImg')
+let placeNineImg = document.getElementById('placeBetNineImg')
+let placeTenImg = document.getElementById('placeBetTenImg')
+
+var placeFourBool = false
+var placeFiveBool = false
+var placeSixBool = false
+var placeEightBool = false
+var placeNineBool = false
+var placeTenBool = false
+
+
+
+placeFour.addEventListener('click', placeBetsFour)
+placeFive.addEventListener('click', placeBetsFive)
+placeSix.addEventListener('click', placeBetsSix)
+placeEight.addEventListener('click', placeBetsEight)
+placeNine.addEventListener('click', placeBetsNine)
+placeTen.addEventListener('click', placeBetsTen)
+
+function placeBetsFour(){
+	
+	if(game === true){
+		placeFourImg.src = flag
+		placeFourBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+function placeBetsFive(){
+	
+	if(game === true){
+		placeFiveImg.src = flag
+		placeFiveBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+function placeBetsSix(){
+	
+	if(game === true){
+		placeSixImg.src = flag
+		placeSixBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+function placeBetsEight(){
+	
+	if(game === true){
+		placeEightImg.src = flag
+		placeEightBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+function placeBetsNine(){
+	
+	if(game === true){
+		placeNineImg.src = flag
+		placeNineBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+function placeBetsTen(){
+	
+	if(game === true){
+		placeTenImg.src = flag
+		placeTenBool = true
+		console.log('Good to go!')
+	} else if(game === false){
+		console.log("You shouldnt place that just yet.")
+	}
+}
+
+
+function clearPlacedBets(){
+	placeFourImg.src = emptyImage
+	placeFiveImg.src = emptyImage
+	placeSixImg.src = emptyImage
+	placeEightImg.src = emptyImage
+	placeNineImg.src = emptyImage
+	placeTenImg.src = emptyImage
+	 placeFourBool = false
+ 	placeFiveBool = false
+ 	placeSixBool = false
+	placeEightBool = false
+	placeNineBool = false
+	placeTenBool = false
+}
+
+// ************** PLACE BETS ^^ **************
+
+
+
+// ************** PROP BETS **************
+
+var sevenProp = document.querySelector('.seven')
+var sixProp = document.querySelector('.hardSix')
+var tenProp = document.querySelector('.hardTen')
+var eightProp = document.querySelector('.hardEight')
+var fourProp = document.querySelector('.hardFour')
+var threeProp = document.querySelector('.three')
+var twoProp = document.querySelector('.two')
+var twelveProp = document.querySelector('.twelve')
+var elevenProp = document.querySelector('.elevenP')
+var elevenPTwo = document.querySelector('.elevenPTwo')
+var anyCrapsProp = document.querySelector('.anyCraps')
+
+
+var sevenImg = document.getElementById('sevenImg')
+var hardSixImg = document.getElementById('hardSixImg')
+var hardTenImg = document.getElementById('hardTenImg')
+var hardEightImg = document.getElementById('hardEightImg')
+var hardFourImg = document.getElementById('hardFourImg')
+var threeImg = document.getElementById('threeImg')
+var twoImg = document.getElementById('twoImg')
+var twelveImg = document.getElementById('twelveImg')
+var elevenPImg = document.getElementById('elevenPImg')
+var elevenPImgTwo = document.getElementById('elevenPImgTwo')
+var anyCrapsImg = document.getElementById('anyCrapsImg')
+
+
+sevenProp.addEventListener('click', hardSevenImgA)
+sixProp.addEventListener('click', hardSixImgA)
+tenProp.addEventListener('click', hardTenImgA)
+eightProp.addEventListener('click', hardEightImgA)
+threeProp.addEventListener('click', threeImgA)
+fourProp.addEventListener('click', hardFourImgA)
+twoProp.addEventListener('click', twoImgA)
+twelveProp.addEventListener('click', twelveImgA)
+elevenProp.addEventListener('click', elevenPImgA)
+elevenPTwo.addEventListener('click', elevenPTwoA)
+
+anyCrapsProp.addEventListener('click', anyCrapsA)
+
+
+
+function hardSevenImgA(){
+	sevenImg.src = flag
+}
+
+function hardSixImgA(){
+	hardSixImg.src = flag
+}
+
+function hardTenImgA(){
+	hardTenImg.src = flag
+}
+function hardEightImgA(){
+	hardEightImg.src = flag
+}
+function hardFourImgA(){
+	hardFourImg.src = flag
+}
+
+function threeImgA(){
+	threeImg.src = flag
+}
+
+function twoImgA(){
+	twoImg.src = flag
+}
+function twelveImgA(){
+	twelveImg.src = flag
+}
+function elevenPImgA(){
+	elevenPImg.src = flag
+}
+function elevenPTwoA(){
+	elevenPImgTwo.src = flag
+}
+function anyCrapsA(){
+	anyCrapsImg.src = flag
+}
+
+
+
+
+
+// ************** PROP BETS **************
+
+
+
+
+
 
 
 function updatePlayerCount(){
@@ -551,7 +792,7 @@ function updateDice(){
 
     
     
-    if(game == false){
+    if(game === false){
         if([7, 11].includes(combinedScore)){
             playerCount = startCount*2/2
             updatePlayerCount()
@@ -565,9 +806,9 @@ function updateDice(){
         }
 
         else if([4, 5, 6, 8, 9, 10].includes(combinedScore)){
-            game = true
-            
-            selected()
+            	
+				game = true
+            	selected()
                 score = combinedScore
                 winningScore = score
                 console.log("point is :", combinedScore)
@@ -590,6 +831,7 @@ function updateDice(){
     } else if(game == true){
         if(winningScore === combinedScore){
             playerCount = startCount*2/2
+			game = false
             updatePlayerCount()
             winning()
             updatePlayerCount()
@@ -598,7 +840,6 @@ function updateDice(){
                 console.log("You win!")
                 declared = `${"Point hit, you win!"}`
                 testCommentAdd()
-                game = false
                 win = true
                 passLine = false
                 winningCounter()
@@ -609,6 +850,9 @@ function updateDice(){
             game = false
             lose = true
             passLine = false
+			// clearing placedbets function
+			clearPlacedBets()
+			// 
             console.log("you've lost")
             declared = `${"7 out!"}`
 			passbet = 0

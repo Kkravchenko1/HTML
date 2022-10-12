@@ -142,8 +142,8 @@ margin: 0;
 
 
 .chipCount {
-    grid-column: 8/9;
-    grid-row: 3/4;
+    grid-column: 10/11;
+    grid-row: 2/3;
     text-align: top;
 }
 
@@ -200,6 +200,52 @@ margin: 0;
 }
 
 
+.propBets {
+    grid-column: 6/11;
+    grid-row: 3/8;
+    margin-top: 22px;
+    margin-left: 7px;
+    display: grid;
+    grid-template-rows: 25px 45px 43px 42px 45px 25px;
+}
+
+
+.hardSixnTen {
+    display: grid;
+    grid-template-columns: 113px 112px;
+}
+
+
+.hardEightnTwo{
+    display: grid;
+    grid-template-columns: 113px 112px;
+}
+
+.threeTwoTwelve{
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+}
+
+
+.eleven{
+    display: grid;
+    grid-template-columns: 113px 112px;
+}
+
+
+.seven:hover, .hardSix:hover, .hardTen:hover, .hardEight:hover, .hardFour:hover,
+.three:hover, .two:hover, .twelve:hover, .elevenP:hover, .anyCraps:hover, .elevenPTwo:hover{
+cursor: pointer;
+}
+
+.dontComeBar:hover{
+    cursor: pointer;
+}
+
+
+
+
+
 
 
 
@@ -211,7 +257,7 @@ margin: 0;
   
     display: flex;
     flex-direction: row;
-    grid-column: 6/8;
+    grid-column: 7/9;
     grid-row: 2/3;
     
 }
@@ -283,10 +329,13 @@ margin: 0;
     grid-row: 3/4;
 }
 
+#placeBetFour:hover, #placeBetfive:hover, #placeBetSix:hover, #placeBetEight:hover, #placeBetNine:hover, #placeBetTen:hover{
+   cursor: pointer;
+}
 
 #comeBar {
 
-    grid-column: 3/4;
+    grid-column: 3/5;
     grid-row: 3/4;
     text-align: center;
     
