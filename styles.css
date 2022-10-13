@@ -28,7 +28,10 @@ margin: 0;
     overflow: scroll;
 
 }
-
+.playerWin{
+    grid-column: 6/10;
+    grid-row: 2/3;
+}
 #externalCLTOPBAR {
     width: 300px;
     border-bottom: 1px black solid;

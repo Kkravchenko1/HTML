@@ -1,0 +1,154 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Craps Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    </head>
+    <body>
+        
+        <div id="crapsTableWrapper">
+            <div id="externalcl">
+
+            <div id="externalCLTOPBAR">Game log</div>
+            <div id="external-comment"><ul id="ulCOMMENT"></ul></div>
+                
+            </div>
+        <div id="crapsTable">
+            <div id='passLine'><img id="passlineImg"src="" alt=""><span class="passLineBet"></span></div>
+            <div id='passLineUp'></div>
+            
+            <div id="sixBigEight"><img id="sixBigEightImg"src="" ></div>
+            <div class="chips">
+                <p id="chips10">10</p>
+                <p id="chips25">25</p>
+                <p id="chips50">50</p>
+                <p id="chips100">100</p>
+
+                
+            </div>
+           
+            <div id="comeBar"><img id="comeBarImg"src="" alt=""></div>
+            <p class="field"><img id="fieldImg"src="" alt=""><span class="fieldBet"></span></p>
+            <div id="dontPassLowerBar"><img id="dontPassBarImg"src="" alt=""></div>
+            <div id="dontPassVerticalBar"></div>
+
+
+            <button id='clearBets'>Clear bets</button>
+            <div class="dice">
+                <div class="leftDice"><h1 class="leftDiceNum">4</h1></div>
+                <div class="rightDice"><h1 class="rightDiceNum">4</h1></div>
+            </div>
+
+            
+            
+            <div id="points">
+                <div class="dontComeBar"><img id='dontComeBarImg' src=""></div>
+                <div class="four">
+
+                    <div class="fourPoint">.</div>
+                    
+                    <div class="comeBetFour">.</div>
+
+                    <div id="placeBetFour"><img id='placeBetFourImg' src=""></div>
+                    
+                </div>
+                <div class="five">
+                    <div class="fivePoint">.</div>
+                    <div class="comeBetFive">.</div>
+                    <div id="placeBetFive"><img id='placeBetFiveImg' src=""></div>
+                </div>
+                <div class="six">
+                    <div class="sixPoint">.</div>
+                    <div class="comeBetSix">.</div>
+                    <div id="placeBetSix"><img id='placeBetSixImg' src=""></div>
+                </div>
+                <div class="eight"
+                ><div class="eightPoint">.</div>
+                <div class="comeBetEight">.</div>
+                    <div id="placeBetEight"><img  id='placeBetEightImg' src=""></div>
+                </div>
+                <div class="nine">
+                    <div class="ninePoint">.</div>
+                    <div class="comeBetNine">.</div>
+                        <div id="placeBetNine"><img id='placeBetNineImg' src=""></div>
+                    </div>
+                <div class="ten">
+                    <div class="tenPoint">.</div>
+                    <div class="comeBetTen">.</div>
+                        <div id="placeBetTen"><img id='placeBetTenImg' src=""></div>
+                    </div>
+
+            </div>
+
+
+        
+            <div class="propBets">
+                <div class="seven"><img id='sevenImg' src=""></div>
+                <div class="hardSixnTen">
+
+                    <div class="hardSix"><img id='hardSixImg' src=""></div>
+                    <div class="hardTen"><img id='hardTenImg' src=""></div>
+
+
+                </div>
+                <div class="hardEightnTwo">
+
+                    <div class="hardEight"><img id='hardEightImg' src=""></div>
+                    <div class="hardFour"><img id='hardFourImg' src=""></div>
+
+                </div>
+                <div class="threeTwoTwelve">
+
+                    <div class="three"><img id='threeImg' src=""></div>
+                    <div class="two"><img id='twoImg' src=""></div>
+                    <div class="twelve"><img id='twelveImg' src=""></div>
+
+                </div>
+                <div class="eleven">
+
+                    <div class="elevenP"><img id='elevenPImg' src=""></div>
+                    <div class="elevenPTwo"><img id='elevenPImgTwo' src=""></div>
+
+                </div>
+                <div class="anyCraps"><img id='anyCrapsImg' src=""></div>
+
+            </div>
+            
+
+            
+
+
+        </div>
+        <div id="playerWinnings">Player Bank <div class="playerBank">
+
+            </div>
+        </div>
+        <div><h2 class="playerWin">You win:</h2><h1 class="chipCount">0</h1></div>
+        <div> Player bank, amount won that round</div>
+        <div id="stats"><div id="statsHeader"><h1><u>Stats and information</u></h1></div>
+        
+
+        
+        <span class="functionsRun">Results from 1000 functions</span>
+        <span class="wins">Times won : 0 </span>
+        <span class="losses">Times lost : 0 </span>
+        <div id="myChart" style="max-width:700px; height:400px"></div>
+        <div id="myChartTwo" style="max-width:700px; height:400px"></div>
+
+         
+       
+       
+        <script
+        src="https://www.gstatic.com/charts/loader.js">
+        </script>
+        <script src=".\HTML\Script.js" async defer> 
+        
+        </script>
+    </body>
+</html>
