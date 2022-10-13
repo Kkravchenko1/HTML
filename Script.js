@@ -115,15 +115,25 @@ function betChecker(){
 	if(chipsBool10 === true){
 		//add amount to count
 		passbet = passbet + 10
+        playerCount = playerCount - 10
+        updatePlayerBank()
+     
+		
 	}
 	else if(chipsBool25 === true){
 		passbet = passbet + 25
+        playerCount = playerCount - 25
+        updatePlayerBank()
 	}
 	else if(chipsBool50 === true){
 		passbet = passbet + 50
+        playerCount = playerCount - 50
+        updatePlayerBank()
 	}
 	else if(chipsBool100 === true){
 		passbet = passbet + 100
+        playerCount = playerCount - 100
+        updatePlayerBank()
 	}
     
 	chipCountUpdate()
@@ -139,15 +149,27 @@ function fieldBetter(){
 	if(chipsBool10 === true){
 		//add amount to count
 		fieldBetNumeral = fieldBetNumeral + 10
+        playerCount = playerCount - 10
+        updatePlayerBank()
+		
 	}
 	else if(chipsBool25 === true){
 		fieldBetNumeral = fieldBetNumeral + 25
+        playerCount = playerCount - 25
+        updatePlayerBank()
+		
 	}
 	else if(chipsBool50 === true){
 		fieldBetNumeral = fieldBetNumeral + 50
+        playerCount = playerCount - 50
+        updatePlayerBank()
+		
 	}
 	else if(chipsBool100 === true){
 		fieldBetNumeral = fieldBetNumeral + 100
+        playerCount = playerCount - 100
+        updatePlayerBank()
+		
 	}
     
 	chipFieldBet()
@@ -181,7 +203,7 @@ loose = false
 let wins = document.querySelector(".wins")
 let losses = document.querySelector('.losses')
 
-let redChipValue = 10
+
 let startCount =  Math.floor(0)
 
 let chipCount = document.querySelector('.chipCount')
@@ -189,9 +211,25 @@ let chipCount = document.querySelector('.chipCount')
 let betClear = document.getElementById("clearBets")
 
 
-let playerCount = 0
-let playerCounter = document.querySelector('.playerCount')
+var playerCount = 1000
+var playerBank = document.querySelector('.playerBank')
 
+
+playerBank.innerHTML = playerCount
+
+console.log(playerBank.innerHTML)
+
+
+function updatePlayerBank(){
+    playerBank.innerHTML = playerCount
+}
+
+
+
+
+function playerBankUpdate(){
+    playerBank.innerHTML = playerCount
+}
 
 game = false
 win = false
@@ -262,17 +300,22 @@ function fieldBet(){
 
 
 function fieldBetWinner(){
+    
     if(fieldBool === true){
         
   
         if([3,4,9,10,11].includes(combinedScore)){
                 console.log("You've won on the field")
                 declared ="You've won on the field"
+                playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
+                updatePlayerBank()
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
                 console.log("you'd win double or triple here")
                 declared ="you'd win double or triple here"
+                playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
+                updatePlayerBank()
                 testCommentAdd()
         }
 
@@ -467,6 +510,7 @@ function dontPassGame(){
 		if([7, 11].includes(combinedScore)){
 		declared = 'You lose on the dont come bar'
 		testCommentAdd()
+        
 		dontPassBool = false
 
 		} else if([2,3,12].includes(combinedScore)){
@@ -732,7 +776,7 @@ function anyCrapsA(){
 
 
 function updatePlayerCount(){
-    playerCounter.innerHTML = playerCount
+    playerBank.innerHTML = playerCount
 }
 
 function chipFieldBet(){
@@ -794,9 +838,9 @@ function updateDice(){
     
     if(game === false){
         if([7, 11].includes(combinedScore)){
-            playerCount = startCount*2/2
-            updatePlayerCount()
-            console.log(playerCount)
+            
+           
+           
         console.log("You win!")
         declared = `${"Passline win!"}`
         testCommentAdd()
@@ -830,13 +874,13 @@ function updateDice(){
         } 
     } else if(game == true){
         if(winningScore === combinedScore){
-            playerCount = startCount*2/2
+           
 			game = false
-            updatePlayerCount()
+            
             winning()
-            updatePlayerCount()
+            
             clearPoint()
-            console.log(playerCount)
+            
                 console.log("You win!")
                 declared = `${"Point hit, you win!"}`
                 testCommentAdd()
@@ -876,20 +920,8 @@ function updateDice(){
 
 /*
 
-1. dont pass bar/done come bar
-
-bets need to add to value - only one value can be changed at a time
-
-2. prop bets
-3. come bets
-4. field bets completed - need math
-5. stats on different types of bets number of wins with 4, 5, 6, 7
-6. place bets
-7. hedge bet on passline
 
 
-
-*/
 
 google.charts.load('current',{packages:['corechart', "corechart"]});
 
@@ -958,9 +990,6 @@ THINGS TO DO
 
 1. PASSLINE BETS - NEED THEM ATTACHED TO INV BETS
 2. MATH BEHIND BETS
-3. PLACE BETS
-4. PROP BETS
-5. DONT PASS BAR
 6 FINALIZE COME BETS
 
 
