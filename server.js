@@ -6,7 +6,7 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', (req, res) => {
-    res.render('./crapsgame')
+    res.render('./crapsgame.ejs')
 })
 
 
