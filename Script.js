@@ -300,7 +300,7 @@ function fieldBet(){
 
 
 function fieldBetWinner(){
-    
+
     if(fieldBool === true){
         
   
@@ -308,14 +308,14 @@ function fieldBetWinner(){
                 console.log("You've won on the field")
                 declared ="You've won on the field"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                updatePlayerBank()
+                
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
                 console.log("you'd win double or triple here")
                 declared ="you'd win double or triple here"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                updatePlayerBank()
+                
                 testCommentAdd()
         }
 
@@ -991,7 +991,7 @@ THINGS TO DO
 1. PASSLINE BETS - NEED THEM ATTACHED TO INV BETS
 2. MATH BEHIND BETS
 6 FINALIZE COME BETS
-
+- field bet is bugged
 
 */ 
 
