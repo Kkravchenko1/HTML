@@ -308,14 +308,14 @@ function fieldBetWinner(){
                 console.log("You've won on the field")
                 declared ="You've won on the field"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                
+                playerBankUpdate()
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
                 console.log("you'd win double or triple here")
                 declared ="you'd win double or triple here"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                
+                playerBankUpdate()
                 testCommentAdd()
         }
 
@@ -325,6 +325,8 @@ function fieldBetWinner(){
             fieldBool = false
             console.log("lost field bet")
             declared ="lost field bet"
+            // minus fieldBet amount from playercount
+            playerBankUpdate()
             testCommentAdd()
             field.innerHTML = ''
         }
@@ -339,16 +341,23 @@ function winning(){
 
     if(combinedScore === 4){
         playerCount = Math.floor(playerCount*2)
+        
+        playerBankUpdate()
     } else if(combinedScore === 5){
         playerCount = Math.floor(playerCount*2.5)
+        playerBankUpdate()
     } else if(combinedScore === 6){
         playerCount = Math.floor(playerCount*1.83)
+        playerBankUpdate()
     } else if(combinedScore === 8){
         playerCount = Math.floor(playerCount*1.83)
+        playerBankUpdate()
     } else if(combinedScore === 9){
         playerCount = Math.floor(playerCount*2.5)
+        playerBankUpdate()
     } else if(combinedScore === 10){
         playerCount = Math.floor(playerCount*2)
+        playerBankUpdate()
     }
    
 
