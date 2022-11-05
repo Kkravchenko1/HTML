@@ -267,7 +267,7 @@ function passLineBet(){
 }
 
 function passLineClear(){
-
+    
     if(passLine === false){
         passlineImg.src = emptyImage
     }
@@ -304,14 +304,14 @@ function fieldBetWinner(){
                 console.log("You've won on the field")
                 declared ="You've won on the field"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                
+                playerBankUpdate()
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
                 console.log("you'd win double or triple here")
                 declared ="you'd win double or triple here"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
-                
+                playerBankUpdate()
                 testCommentAdd()
         }
 
@@ -321,6 +321,8 @@ function fieldBetWinner(){
             fieldBool = false
             console.log("lost field bet")
             declared ="lost field bet"
+            // minus fieldBet amount from playercount
+            playerBankUpdate()
             testCommentAdd()
             field.innerHTML = ''
         }
@@ -334,17 +336,24 @@ function fieldBetWinner(){
 function winning(){
 
     if(combinedScore === 4){
-        playerCount = Math.floor(playerCount*2)
+        playerCount = Math.floor(/*bet amount*2*/passbet*2)
+        
+        playerBankUpdate()
     } else if(combinedScore === 5){
-        playerCount = Math.floor(playerCount*2.5)
+        playerCount = Math.floor(passbet*2.5)
+        playerBankUpdate()
     } else if(combinedScore === 6){
-        playerCount = Math.floor(playerCount*1.83)
+        playerCount = Math.floor(passbet*1.83)
+        playerBankUpdate()
     } else if(combinedScore === 8){
-        playerCount = Math.floor(playerCount*1.83)
+        playerCount = Math.floor(passbet*1.83)
+        playerBankUpdate()
     } else if(combinedScore === 9){
-        playerCount = Math.floor(playerCount*2.5)
+        playerCount = Math.floor(passbet*2.5)
+        playerBankUpdate()
     } else if(combinedScore === 10){
-        playerCount = Math.floor(playerCount*2)
+        playerCount = Math.floor(passbet*2)
+        playerBankUpdate()
     }
    
 
@@ -676,6 +685,33 @@ function clearPlacedBets(){
 
 // ************** PLACE BETS ^^ **************
 
+// ************** HARD & PROP BETS ***********
+
+/* bet should compare against roll
+
+
+if it hits the number increase amount 
+by amount(start with 2)
+
+*/
+if(combinedScore === /* chosen number */ 7){
+    /* add amount to player bank*/ 
+    playerBank = playerBank * 2
+    playerBankUpdate() 
+    }
+     
+    else if(combinedScore === ){
+         
+    }
+    /* if value is set to true, check value 
+    
+    onclick changes the value to true 
+    */
+     function propBetGame(){
+        if(/* set value to true onclick*/)
+     }
+
+// *************** HARD & PROP BETS **********
 
 
 // ************** PROP BETS **************
@@ -835,16 +871,17 @@ function updateDice(){
     if(game === false){
         if([7, 11].includes(combinedScore)){
             
-           
-           
+           //updates playerCount with win amount
+            playerCount = Math.floor(passbet + passbet)
+            playerBankUpdate()
         console.log("You win!")
         declared = `${"Passline win!"}`
         testCommentAdd()
         winningCounter()
         passLineClear()
 		game = false
+        
         }
-
         else if([4, 5, 6, 8, 9, 10].includes(combinedScore)){
             	
 				game = true
@@ -863,6 +900,7 @@ function updateDice(){
             declared = `${"you lose"}`
             passLine = false
 			passbet = 0
+            // update passbar
             testCommentAdd()
             loosesCounter()
             chipCountClear()
@@ -987,6 +1025,7 @@ THINGS TO DO
 1. PASSLINE BETS - NEED THEM ATTACHED TO INV BETS
 2. MATH BEHIND BETS
 6 FINALIZE COME BETS
+4. bets update to passline bet amount and doesnt carry its own value. 
 - field bet is bugged
 
 */ 
