@@ -149,26 +149,22 @@ function fieldBetter(){
 	if(chipsBool10 === true){
 		//add amount to count
 		fieldBetNumeral = fieldBetNumeral + 10
-        playerCount = playerCount - 10
-        updatePlayerBank()
+        
 		
 	}
 	else if(chipsBool25 === true){
 		fieldBetNumeral = fieldBetNumeral + 25
-        playerCount = playerCount - 25
-        updatePlayerBank()
+        
 		
 	}
 	else if(chipsBool50 === true){
 		fieldBetNumeral = fieldBetNumeral + 50
-        playerCount = playerCount - 50
-        updatePlayerBank()
+        
 		
 	}
 	else if(chipsBool100 === true){
 		fieldBetNumeral = fieldBetNumeral + 100
-        playerCount = playerCount - 100
-        updatePlayerBank()
+      
 		
 	}
     
@@ -997,7 +993,12 @@ THINGS TO DO
 
 
 
- 
+ var arraytest = [1, 2, 3]
+ arraytest.foo = 'hello'
+
+ for(var i of arraytest){
+    console.log(i)
+ }
 
 
 
