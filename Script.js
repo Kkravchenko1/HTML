@@ -65,7 +65,7 @@ chips10.addEventListener('click', ()=>{
     index = index >= colors.length - 1 ? 0 : index + 1;
     indexColors = indexColors >= textColors.length - 1 ? 0 : indexColors + 1;
     chipsBool10 = !chipsBool10
-    console.log(chipsBool10)
+    
 
 	
     
@@ -212,7 +212,7 @@ var playerBank = document.querySelector('.playerBank')
 
 playerBank.innerHTML = playerCount
 
-console.log(playerBank.innerHTML)
+
 
 
 function updatePlayerBank(){
@@ -235,7 +235,7 @@ comeBet.addEventListener('click', ()=> {
     
     if(game === true){
         comeBetBool = true
-        console.log(comeBetBool)
+        
         comeBarImg.src = flag
 		
     }
@@ -300,14 +300,14 @@ function fieldBetWinner(){
         
   
         if([3,4,9,10,11].includes(combinedScore)){
-                console.log("You've won on the field")
+                
                 declared ="You've won on the field"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
                 playerBankUpdate()
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
-                console.log("you'd win double or triple here")
+                
                 declared ="you'd win double or triple here"
                 playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
                 playerBankUpdate()
@@ -318,7 +318,7 @@ function fieldBetWinner(){
                 
         else if([5,6,7,8].includes(combinedScore)){
             fieldBool = false
-            console.log("lost field bet")
+            
             declared ="lost field bet"
             // minus fieldBet amount from playercount
             playerBankUpdate()
@@ -386,7 +386,7 @@ function comeBetSelector(){
         if([7].includes(combinedScore)){
             comeBar.innerHTML = "."
             comeBetBool = false
-            console.log("you lose come bet")
+            
             declared = "you lose come bet"
             testCommentAdd()
             comeBetArray = []
@@ -396,7 +396,7 @@ function comeBetSelector(){
         if([7, 11, 2, 3, 12].includes(combinedScore)){
             comeBar.innerHTML = "."
             comeBetBool = false
-            console.log("you lose come bet")
+            
             declared = "you lose come bet"
             testCommentAdd()
             comeBetArray = []
@@ -434,7 +434,7 @@ function selected(){
 
 function comeBetWinner(){
     if(comeBetArray.includes(4,5,6,8,9,10)){
-        console.log("Winner!")
+        
         declared = "Winner!"
         testCommentAdd()
 
@@ -613,9 +613,9 @@ function placeBetsFour(){
 	if(game === true){
 		placeFourImg.src = flag
 		placeFourBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 function placeBetsFive(){
@@ -623,9 +623,9 @@ function placeBetsFive(){
 	if(game === true){
 		placeFiveImg.src = flag
 		placeFiveBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 function placeBetsSix(){
@@ -633,9 +633,9 @@ function placeBetsSix(){
 	if(game === true){
 		placeSixImg.src = flag
 		placeSixBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 function placeBetsEight(){
@@ -643,9 +643,9 @@ function placeBetsEight(){
 	if(game === true){
 		placeEightImg.src = flag
 		placeEightBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 function placeBetsNine(){
@@ -653,9 +653,9 @@ function placeBetsNine(){
 	if(game === true){
 		placeNineImg.src = flag
 		placeNineBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 function placeBetsTen(){
@@ -663,9 +663,9 @@ function placeBetsTen(){
 	if(game === true){
 		placeTenImg.src = flag
 		placeTenBool = true
-		console.log('Good to go!')
+		
 	} else if(game === false){
-		console.log("You shouldnt place that just yet.")
+		
 	}
 }
 
@@ -843,7 +843,7 @@ function updateDice(){
 
     combinedScore = roll + rollTwo
 
-    console.log("combined score", combinedScore)
+    
     declared = `${"Dice roll : " + combinedScore}`
     testCommentAdd()
     comeBetSelector()
@@ -861,7 +861,7 @@ function updateDice(){
            //updates playerCount with win amount
             playerCount = Math.floor(passbet + passbet)
             playerBankUpdate()
-        console.log("You win!")
+        
         declared = `${"Passline win!"}`
         testCommentAdd()
         winningCounter()
@@ -877,13 +877,13 @@ function updateDice(){
             	selected()
                 score = combinedScore
                 winningScore = score
-                console.log("point is :", combinedScore)
+                
                 declared = `${"Point is : " + combinedScore}`
                 testCommentAdd()
                 
             
         }  else if ([2, 3, 12].includes(combinedScore)){
-            console.log("you lose")
+            
             game = false
             lose = true
             declared = `${"you lose"}`
@@ -905,7 +905,7 @@ function updateDice(){
             
             clearPoint()
             
-                console.log("You win!")
+                
                 declared = `${"Point hit, you win!"}`
                 testCommentAdd()
                 win = true
@@ -921,7 +921,7 @@ function updateDice(){
 			// clearing placedbets function
 			clearPlacedBets()
 			// 
-            console.log("you've lost")
+            
             declared = `${"7 out!"}`
 			passbet = 0
             testCommentAdd()
@@ -931,7 +931,7 @@ function updateDice(){
             resetPassbet()
         }
         else{
-            console.log("We're still playing.")
+            
         }
     }
     
@@ -1024,12 +1024,7 @@ THINGS TO DO
 
 
 
- var arraytest = [1, 2, 3]
- arraytest.foo = 'hello'
-
- for(var i of arraytest){
-    console.log(i)
- }
+ 
 
 
 
