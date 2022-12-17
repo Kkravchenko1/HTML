@@ -2,7 +2,6 @@
 
 
 
-
 let four = document.querySelector('.four') // pays 2 to 1
 let five = document.querySelector('.five') // pays 3 to 2
 let six = document.querySelector('.six') // pays 5:6
@@ -479,11 +478,14 @@ function loosesCounter(){
     
 
 // variable for bet amounts - will test with multiple bets
-var passbet = 0
+var passbet = 35
 
 var passLineBetAmount = document.querySelector('.passLineBet')
 
-
+function resetPassbet(){
+    passbet = 0
+    chipCountUpdate()
+}
 
 
 // ************ DONT PASS BAR **************
@@ -694,23 +696,7 @@ if it hits the number increase amount
 by amount(start with 2)
 
 */
-if(combinedScore === /* chosen number */ 7){
-    /* add amount to player bank*/ 
-    playerBank = playerBank * 2
-    playerBankUpdate() 
-    }
-     
-    else if(combinedScore === ){
-         
-    }
-    /* if value is set to true, check value 
-    
-    onclick changes the value to true 
-    */
-     function propBetGame(){
-        if(/* set value to true onclick*/)
-     }
-
+// 
 // *************** HARD & PROP BETS **********
 
 
@@ -825,6 +811,7 @@ function chipCountUpdate(){
 function chipCountClear(){
     
     startCount = 0
+    passbet = 0
     chipCount.innerHTML = startCount
     
 }
@@ -878,7 +865,9 @@ function updateDice(){
         declared = `${"Passline win!"}`
         testCommentAdd()
         winningCounter()
-        passLineClear()
+        
+        chipCountUpdate()
+        
 		game = false
         
         }
@@ -904,7 +893,8 @@ function updateDice(){
             testCommentAdd()
             loosesCounter()
             chipCountClear()
-            passLineClear()
+            resetPassbet()
+            chipCountUpdate()
         } 
     } else if(game == true){
         if(winningScore === combinedScore){
@@ -938,7 +928,7 @@ function updateDice(){
             clearPoint()
             loosesCounter()
             chipCountClear()
-            passLineClear()
+            resetPassbet()
         }
         else{
             console.log("We're still playing.")
@@ -1027,6 +1017,8 @@ THINGS TO DO
 6 FINALIZE COME BETS
 4. bets update to passline bet amount and doesnt carry its own value. 
 - field bet is bugged
+5. fix the player bank
+6. clear bets doesnt work
 
 */ 
 
