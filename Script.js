@@ -478,7 +478,7 @@ function loosesCounter(){
     
 
 // variable for bet amounts - will test with multiple bets
-var passbet = 35
+var passbet = 0
 
 var passLineBetAmount = document.querySelector('.passLineBet')
 
