@@ -210,20 +210,21 @@ var playerCount = 1000
 var playerBank = document.querySelector('.playerBank')
 
 
-playerBank.innerHTML = playerCount
+playerBank.innerHTML = playerCount 
 
 
 
 
 function updatePlayerBank(){
-    playerBank.innerHTML = playerCount
+    playerBank.innerHTML = playerCount 
 }
 
-
+// players bank = playersbank + winnings
 
 
 function playerBankUpdate(){
-    playerBank.innerHTML = playerCount
+    playerBank.innerHTML = playerCount // is equal to whatever the amount is.
+    // needs to be replaced with amount + winnings = playercount. 
 }
 
 game = false
@@ -335,23 +336,25 @@ function fieldBetWinner(){
 function winning(){
 
     if(combinedScore === 4){
-        playerCount = Math.floor(/*bet amount*2*/passbet*2)
-        
+        playerCount = playerCount + Math.floor(/*bet amount*2*/passbet*2) 
+        //need to update amount
+        // winnings = math.floor * whatever won
+        // add amount to winnings. 
         playerBankUpdate()
     } else if(combinedScore === 5){
-        playerCount = Math.floor(passbet*2.5)
+        playerCount = playerCount + Math.floor(passbet*2.5)
         playerBankUpdate()
     } else if(combinedScore === 6){
-        playerCount = Math.floor(passbet*1.83)
+        playerCount = playerCount + Math.floor(passbet*1.83)
         playerBankUpdate()
     } else if(combinedScore === 8){
-        playerCount = Math.floor(passbet*1.83)
+        playerCount = playerCount + Math.floor(passbet*1.83)
         playerBankUpdate()
     } else if(combinedScore === 9){
-        playerCount = Math.floor(passbet*2.5)
+        playerCount = playerCount + Math.floor(passbet*2.5)
         playerBankUpdate()
     } else if(combinedScore === 10){
-        playerCount = Math.floor(passbet*2)
+        playerCount = playerCount + Math.floor(passbet*2)
         playerBankUpdate()
     }
    
@@ -859,7 +862,7 @@ function updateDice(){
         if([7, 11].includes(combinedScore)){
             
            //updates playerCount with win amount
-            playerCount = Math.floor(passbet + passbet)
+            playerCount = playercount + Math.floor(passbet)
             playerBankUpdate()
         
         declared = `${"Passline win!"}`

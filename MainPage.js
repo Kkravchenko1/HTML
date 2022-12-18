@@ -126,3 +126,19 @@ buttonClicker.addEventListener('click', () =>{
     console.log(clickerValue)
     console.log(clicker)
 })
+
+var game = 0
+
+function gameWinner(){
+
+    winnings = 25  * 10
+    game = game + winnings
+    console.log(game)
+}
+
+let clickerOne = document.getElementById("testGame")
+
+clickerOne.addEventListener("click", gameWinner)
+
+
+console.log(game)
