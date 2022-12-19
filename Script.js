@@ -260,14 +260,13 @@ passLineUp.addEventListener('click', passLineBet)
 /* Field bet info needs to be here
 Field bet game - 
     game is simple = 
-        start by adding value to field bet (left click adds value ____ right click removes value. )
+        start by adding value to field bet (left click adds value ____ right click removes value. ) /
             if won - add value to bank 
-            if loss - remove bet 
+            if loss - remove bet / 
         bets remove value from bank
-    stop player from playing less than 0
+    stop player from playing less than 0 / 
     all player to remove bets
-Field bet winner
-Field better
+
 */
 
 field.addEventListener('click', fieldBet)
@@ -275,57 +274,29 @@ field.addEventListener('contextmenu', fieldRightClick);
 
 function fieldRightClick(e){
     e.preventDefault()
-    console.log("Right Clicked")
+    
     if(fieldBetNumeral == 0){
         fieldBetNumeral = 0
-    } else{
+    } else {
     fieldBetNumeral = fieldBetNumeral - 10}
     
     // use this to reduce amount by 10. Clicking sets to true or false. 
     chipFieldBet()
     //update image with new value
 }
-var fieldBool = false
+
 
 function fieldBet(){ 
-
-    // fieldImg.src = flag
-    
     
 	fieldBetter()
 	chipFieldBet()
-
+    field.innerHTML = fieldBetNumeral
 }
 
 function chipFieldBet(){
 	fieldBetOne.innerHTML = fieldBetNumeral
 
 }
-
-/*
-function activeFieldBet(){
-    fieldImg.src = flag
-}
-outdated field bet flag = used to flah when true. 
-*/
-/*
-
-left click adds
-left click true/false
-right click reduce
-
-while fieldbetnumeral is more than 1 = remain true. Else false. 
-*/
- 
-
-
-    // need to rewrite this -------
-    // Onclick - set amount to value
-    // when clicked set to true?
-
-
-    // if zero - nothing
-    // if more then zero, true. refresh?
 
 
 
@@ -359,20 +330,20 @@ function fieldBetter(){
 
 function fieldBetWinner(){
 
-    if(fieldBool === true){
+    // playerCount = playerCount + Math.floor(passbet*2)
         
   
         if([3,4,9,10,11].includes(combinedScore)){
                 
                 declared ="You've won on the field"
-                playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
+                playerCount = playerCount + Math.floor(fieldBetNumeral*2)
                 playerBankUpdate()
                 testCommentAdd()}
                 
         else if([2,12].includes(combinedScore)){
                 
                 declared ="you'd win double or triple here"
-                playerCount = Math.floor(fieldBetNumeral + fieldBetNumeral)
+                playerCount = playerCount + Math.floor(fieldBetNumeral*3) 
                 playerBankUpdate()
                 testCommentAdd()
         }
@@ -382,17 +353,19 @@ function fieldBetWinner(){
         else if([5,6,7,8].includes(combinedScore)){
             
             
-            
+            fieldBetNumeral = 0
             declared ="lost field bet"
             // minus fieldBet amount from playercount
+            field.innerHTML = fieldBetNumeral
+            
             playerBankUpdate()
             testCommentAdd()
-            field.innerHTML = ''
+            
         }
 
 
     }
-}
+
 
 
 
@@ -893,12 +866,7 @@ dice = document.querySelector('.dice')
 
 dice.addEventListener('click', updateDice)
 
-function passLineWinner(){
 
-    if([7, 11].includes(combinedScore)){
-        console.log("winner")
-    }
-}
 
 
 
