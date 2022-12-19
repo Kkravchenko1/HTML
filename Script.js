@@ -144,31 +144,7 @@ let fieldBetOne = document.querySelector('.fieldBet')
 let fieldBetNumeral = 0
 
 
-function fieldBetter(){
-	if(chipsBool10 === true){
-		//add amount to count
-		fieldBetNumeral = fieldBetNumeral + 10
-        
-		
-	}
-	else if(chipsBool25 === true){
-		fieldBetNumeral = fieldBetNumeral + 25
-        
-		
-	}
-	else if(chipsBool50 === true){
-		fieldBetNumeral = fieldBetNumeral + 50
-        
-		
-	}
-	else if(chipsBool100 === true){
-		fieldBetNumeral = fieldBetNumeral + 100
-      
-		
-	}
-    
-	chipFieldBet()
-}
+
 
 
 function testCommentAdd(){
@@ -281,7 +257,15 @@ passLine.addEventListener('click', passLineBet)
 passLineUp.addEventListener('click', passLineBet)
 
 
-
+/* Field bet info needs to be here
+Field bet game - 
+    sets the flag to on
+    sets fieldbool to true
+    run fieldbetter function on click
+    run chipfieldbet on click
+Field bet winner
+Field better
+*/
 
 field.addEventListener('click', fieldBet)
 
@@ -294,6 +278,31 @@ function fieldBet(){
 
 }
 
+function fieldBetter(){
+	if(chipsBool10 === true){
+		//add amount to count
+		fieldBetNumeral = fieldBetNumeral + 10
+        
+		
+	}
+	else if(chipsBool25 === true){
+		fieldBetNumeral = fieldBetNumeral + 25
+        
+		
+	}
+	else if(chipsBool50 === true){
+		fieldBetNumeral = fieldBetNumeral + 50
+        
+		
+	}
+	else if(chipsBool100 === true){
+		fieldBetNumeral = fieldBetNumeral + 100
+      
+		
+	}
+    
+	chipFieldBet()
+}
 
 function fieldBetWinner(){
 
@@ -318,8 +327,9 @@ function fieldBetWinner(){
     
                 
         else if([5,6,7,8].includes(combinedScore)){
-            fieldBool = false
             
+            
+            fieldBool = false
             declared ="lost field bet"
             // minus fieldBet amount from playercount
             playerBankUpdate()
@@ -833,7 +843,12 @@ dice = document.querySelector('.dice')
 
 dice.addEventListener('click', updateDice)
 
+function passLineWinner(){
 
+    if([7, 11].includes(combinedScore)){
+        console.log("winner")
+    }
+}
 
 
 
@@ -862,13 +877,13 @@ function updateDice(){
         if([7, 11].includes(combinedScore)){
             
            //updates playerCount with win amount
-            playerCount = playercount + Math.floor(passbet)
+            
             playerBankUpdate()
         
         declared = `${"Passline win!"}`
         testCommentAdd()
         winningCounter()
-        
+        passLineWinner()
         chipCountUpdate()
         
 		game = false
