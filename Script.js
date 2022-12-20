@@ -44,10 +44,10 @@ const colors = ['black', 'transparent'];
 const textColors = ['white', 'black'];
  
 
-    chipsBool10 = false,
-    chipsBool25 = false, 
-    chipsBool50 = false, 
-    chipsBool100 = false
+    var chipsBool10 = false
+    var chipsBool25 = false
+    var chipsBool50 = false
+    var chipsBool100 = false
 
 
 
@@ -77,6 +77,7 @@ chips25.addEventListener('click', ()=>{
     index = index >= colors.length - 1 ? 0 : index + 1;
     indexColors = indexColors >= textColors.length - 1 ? 0 : indexColors + 1;
     chipsBool25 = !chipsBool25
+    
  
 });
 
@@ -90,6 +91,7 @@ chips50.addEventListener('click', ()=>{
     chipsBool50 = !chipsBool50
     
     
+    
   
 });
 
@@ -100,6 +102,7 @@ chips100.addEventListener('click', ()=>{
     indexColors = indexColors >= textColors.length - 1 ? 0 : indexColors + 1;
     
     chipsBool100 = !chipsBool100
+    
     
 });
 
@@ -237,17 +240,12 @@ passline = false
 
 function passLineBet(){
     passline = true
-    passlineImg.src = flag
+    
 	betChecker()
 
 }
 
-function passLineClear(){
-    
-    if(passLine === false){
-        passlineImg.src = emptyImage
-    }
-}
+
 
 
 
@@ -277,6 +275,7 @@ function fieldRightClick(e){
     
     if(fieldBetNumeral == 0){
         fieldBetNumeral = 0
+        fieldBetBool = false
     } else {
     fieldBetNumeral = fieldBetNumeral - 10
     field.innerHTML = fieldBetNumeral
@@ -290,9 +289,10 @@ function fieldRightClick(e){
     //update image with new value
 }
 
+var fieldBetBool = false
 
 function fieldBet(){ 
-    
+    fieldBetBool = true
 	fieldBetter()
 	chipFieldBet()
     field.innerHTML = fieldBetNumeral
@@ -341,7 +341,7 @@ function fieldBetWinner(){
 
     // playerCount = playerCount + Math.floor(passbet*2)
         
-  
+  if(fieldBetBool == true){
         if([3,4,9,10,11].includes(combinedScore)){
                 
                 declared ="You've won on the field"
@@ -355,7 +355,7 @@ function fieldBetWinner(){
                 playerCount = playerCount + Math.floor(fieldBetNumeral*3) 
                 playerBankUpdate()
                 testCommentAdd()
-        }
+        }}
 
     
                 
