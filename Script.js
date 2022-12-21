@@ -260,8 +260,9 @@ passLineUp.addEventListener('click', passLineBet)
 function passLineRightClick(e){
     e.preventDefault()
     
-    if(passbet == 0){
+    if(passbet <= 0){
         passbet = 0
+        passLineBetAmount.innerHTML = passbet
         
     } else {
         passbet = passbet - 10
@@ -290,7 +291,7 @@ field.addEventListener('contextmenu', fieldRightClick);
 function fieldRightClick(e){
     e.preventDefault()
     
-    if(fieldBetNumeral == 0){
+    if(fieldBetNumeral <= 0){
         fieldBetNumeral = 0
         fieldBetBool = false
     } else {
