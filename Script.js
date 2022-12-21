@@ -166,6 +166,7 @@ var declared = ""
 let pointGame = 0;
 
 let passLine = document.getElementById('passLine')
+
 let passLineUp = document.getElementById('passLineUp')
 
 
@@ -252,8 +253,24 @@ function passLineBet(){
 
 
 passLine.addEventListener('click', passLineBet)
+passLine.addEventListener('contextmenu', passLineRightClick);
+passLineUp.addEventListener('contextmenu', passLineRightClick)
 passLineUp.addEventListener('click', passLineBet)
 
+function passLineRightClick(e){
+    e.preventDefault()
+    
+    if(passbet == 0){
+        passbet = 0
+        
+    } else {
+        passbet = passbet - 10
+        passLineBetAmount.innerHTML = passbet
+    playerCount = playerCount + 10
+    updatePlayerBank()
+    
+}
+}
 
 /* Field bet info needs to be here
 Field bet game - 
