@@ -285,8 +285,8 @@ Field bet game -
 
 */
 
-field.addEventListener('click', fieldBet)
-field.addEventListener('contextmenu', fieldRightClick);
+field.addEventListener('click', fieldBet) // left click adds    
+field.addEventListener('contextmenu', fieldRightClick); // right click removes
 
 function fieldRightClick(e){
     e.preventDefault()
@@ -303,17 +303,16 @@ function fieldRightClick(e){
 }
     
     // use this to reduce amount by 10. Clicking sets to true or false. 
-    chipFieldBet()
     //update image with new value
 }
 
-var fieldBetBool = false
+var fieldBetBool = false // default should be false
 
 function fieldBet(){ 
-    fieldBetBool = true
-	fieldBetter()
-	chipFieldBet()
-    field.innerHTML = fieldBetNumeral
+    fieldBetBool = true // sets true when you bet
+	fieldBetter() // fieldBetter is the math behind the bets
+	chipFieldBet() // update inner html
+    field.innerHTML = fieldBetNumeral // set innerHTML 
 }
 
 function chipFieldBet(){
@@ -373,7 +372,7 @@ function fieldBetWinner(){
                 playerCount = playerCount + Math.floor(fieldBetNumeral*3) 
                 playerBankUpdate()
                 testCommentAdd()
-        }}
+        }
 
     
                 
@@ -392,6 +391,7 @@ function fieldBetWinner(){
 
 
     }
+}
 
 
 
@@ -931,7 +931,7 @@ function updateDice(){
         declared = `${"Passline win!"}`
         testCommentAdd()
         winningCounter()
-        passLineWinner()
+        
         chipCountUpdate()
         
 		game = false
