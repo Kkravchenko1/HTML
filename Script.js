@@ -561,6 +561,9 @@ function resetPassbet(){
 var dontPassBar = document.getElementById('dontPassLowerBar')
 var dontPassBarUp = document.getElementById('dontPassVerticalBar')
 var dontPassBarImg = document.getElementById('dontPassBarImg')
+let dontPassBarBet = document.querySelector("passLineBet")
+
+
 
 dontPassVerticalBar.addEventListener('click', dontPass)
 dontPassBar.addEventListener('click', dontPass)
