@@ -931,7 +931,7 @@ dice = document.querySelector('.dice')
 dice.addEventListener('click', updateDice)
 
 // DICE NUMBERS
-
+const diceOne = 1
 const diceTwo = 2
 const diceThree = 3
 const diceFour = 4
@@ -944,19 +944,60 @@ const diceSix = 6
 // number is attached to variable
 // variable needs to be compared against dice variable
 // choose variable depending on number. 
-
-function test(){
-    // function should take a number and compare against variable. 
-    roll 
+function diceConvertor(){
+    if(roll === diceOne){
+        rightDiceNum.innerHTML = "."
+    } else if(roll === diceTwo){
+        rightDiceNum.innerHTML = ".."
+    }
+    else if(roll === diceThree){
+        rightDiceNum.innerHTML = "..."
+    }
+    else if(roll === diceFour){
+        rightDiceNum.innerHTML = "...."
+    }
+    else if(roll === diceFive){
+        rightDiceNum.innerHTML = "....."
+    }
+    else if(roll === diceSix){
+        rightDiceNum.innerHTML = "......"
+    }
+    // SECOND DICE ROLL CHECKER
 }
+
+function diceConvertorTwo(){
+    if(rollTwo === diceOne){
+        leftDiceNum.innerHTML = "."
+    } else if(rollTwo === diceTwo){
+        leftDiceNum.innerHTML = ".."
+    }
+    else if(rollTwo === diceThree){
+        leftDiceNum.innerHTML = "..."
+    }
+    else if(rollTwo === diceFour){
+        leftDiceNum.innerHTML = "...."
+    }
+    else if(rollTwo === diceFive){
+        leftDiceNum.innerHTML = "....."
+    }
+    else if(rollTwo === diceSix){
+        leftDiceNum.innerHTML = "......"
+    }
+}
+// works, need to design the dice. 
+// create in JS? -- will need to create in JS and have it ready in CSS
 
 function updateDice(){
 
     roll = Math.floor(Math.random()*6) + 1
     rollTwo = Math.floor(Math.random()*6) + 1
+    /*
     rightDiceNum.innerHTML = roll
     leftDiceNum.innerHTML = rollTwo
+    */
 
+    diceConvertor()
+    diceConvertorTwo()
     combinedScore = roll + rollTwo
 
     

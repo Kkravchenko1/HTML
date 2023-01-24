@@ -282,6 +282,13 @@ cursor: pointer;
     cursor: pointer;
 }
 
+.leftDiceNum, .rightDiceNum {
+   position: relative;
+   letter-spacing: 2px;
+   bottom: 15px;
+   word-wrap: break-word;
+}
+
 .rightDice {
     flex: 1;
     border: 1px solid black;
