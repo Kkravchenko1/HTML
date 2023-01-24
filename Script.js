@@ -57,6 +57,15 @@ var comeBarImg = document.getElementById('comeBarImg')
 
 let flag = "./emoji_flags_FILL0_wght400_GRAD0_opsz48 (1).png"
 
+// DICE NUMBERS
+
+const diceTwo = ".."
+const diceThree = "..."
+const diceFour = "...."
+const diceFive = "....."
+const diceSix = "......"
+
+// DICE NUMBERS ^^^
  
 
 chips10.addEventListener('click', ()=>{
@@ -217,7 +226,7 @@ comeBet.addEventListener('click', ()=> {
     if(game === true){
         comeBetBool = true
         
-        comeBarImg.src = flag
+        comeBarImg.src = flag // flag tag if true
 		
     }
     else if(game === false){
@@ -228,6 +237,21 @@ comeBet.addEventListener('click', ()=> {
 
 })
 
+// NEED TO PUT OPPOSITE HERE. TAKE CODE FROM BELOW. 
+comeBet.addEventListener('contextmenu', comeBetRightClick);
+
+function comeBetRightClick(e){
+    e.preventDefault()
+     if(comeBetBool === true){
+        comeBetBool = false
+        comeBarImg.src = ""
+
+     }
+     else {
+        // Do nothing. 
+     }
+   
+}
 
 // on click - set value of come bet to 10
 // if point on - roll and equate that value to the come bet
@@ -578,6 +602,24 @@ function dontPass(){
 	dontPassBool = true
 	dontPassBarImg.src = flag
 
+}
+
+// dont pass bar right click
+
+dontPassBar.addEventListener('contextmenu', dontPassRightClick);
+dontPassBarUp.addEventListener('contextmenu', dontPassRightClick);
+
+function dontPassRightClick(e){
+    e.preventDefault()
+     if(dontPassBool === true){
+        dontPassBool = false
+        dontPassBarImg.src = ""
+
+     }
+     else {
+        // Do nothing. 
+     }
+   
 }
 
 function dontPassGame(){
@@ -1085,7 +1127,7 @@ THINGS TO DO
 - field bet is bugged
 5. fix the player bank
 6. clear bets doesnt work
-
+7. model dice so that dots instead of numbers
 */ 
 
 
