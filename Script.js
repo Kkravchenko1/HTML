@@ -57,15 +57,7 @@ var comeBarImg = document.getElementById('comeBarImg')
 
 let flag = "./emoji_flags_FILL0_wght400_GRAD0_opsz48 (1).png"
 
-// DICE NUMBERS
 
-const diceTwo = ".."
-const diceThree = "..."
-const diceFour = "...."
-const diceFive = "....."
-const diceSix = "......"
-
-// DICE NUMBERS ^^^
  
 
 chips10.addEventListener('click', ()=>{
@@ -938,9 +930,25 @@ dice = document.querySelector('.dice')
 
 dice.addEventListener('click', updateDice)
 
+// DICE NUMBERS
 
+const diceTwo = 2
+const diceThree = 3
+const diceFour = 4
+const diceFive = 5
+const diceSix = 6
 
+// DICE NUMBERS ^^^
 
+// random dice number
+// number is attached to variable
+// variable needs to be compared against dice variable
+// choose variable depending on number. 
+
+function test(){
+    // function should take a number and compare against variable. 
+    roll 
+}
 
 function updateDice(){
 
